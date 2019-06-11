@@ -7,25 +7,19 @@ from sklearn import preprocessing
 from sklearn.preprocessing import LabelEncoder
 
 
-def getImages() :
-    path = "./data"
-    count = 0
+def getImages(path = "./data") :
     imgs = []
     labels = []
-    for folder in os.listdir(path):
-        count= count+1
-        for image in os.listdir(path+'/'+folder+'/'):
-            print(os.path.join(path+'/'+folder,image))
-            print(count)
-            img = cv2.imread(os.path.join(path+'/'+folder,image))
-            img =cv2.resize(img,(100,100))
-            imgs.append(img)
-            labels.append(count)
-        # with open('./tmp/'+folder+".pkl","wb") as f:
-        #     pickle.dump(imgs,f)
+    for image in os.listdir(path):
+        img = cv2.imread(os.path.join(path,image))
+        img =cv2.resize(img,(100,100))
+        imgs.append(img)
+        labels.append(image)
+    # with open('./tmp/'+folder+".pkl","wb") as f:
+    #     pickle.dump(imgs,f)
 
-        # with open('./tmp/'+folder+"labels.pkl","wb") as f:
-        #     pickle.dump(labels,f)
+    # with open('./tmp/'+folder+"labels.pkl","wb") as f:
+    #     pickle.dump(labels,f)
 
     return imgs , labels
 
