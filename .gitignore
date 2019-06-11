@@ -8,3 +8,6 @@ ImagesProcess/__pycache__
 
 data/*
 tmp/*
+
+knn.pkl
+cnn.h5
