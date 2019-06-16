@@ -1,0 +1,6 @@
+gunicorn
+flask
+numpy
+cv2
+sklearn
+tensorflow
